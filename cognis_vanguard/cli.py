@@ -13,6 +13,8 @@ from . import graph as graphmod
 from . import report as reportmod
 from . import stix as stixmod
 from .agents import Orchestrator
+from .sources import ingest as vfeeds
+from .sources.client import HttpClient
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.normpath(os.path.join(_HERE, "..", "data"))
@@ -74,6 +76,46 @@ def cmd_graph(args):
     return 0
 
 
+def cmd_sources_list(args):
+    for s in vfeeds.list_sources(category=args.category):
+        print(f"{s['name']:22} {s['category']:14} {s['adapter']:10} {s['url'][:60]}")
+    print(f"\n{len(vfeeds.list_sources(category=args.category))} feeds")
+    return 0
+
+
+def cmd_sources_stats(args):
+    print(json.dumps(vfeeds.stats(), indent=2))
+    return 0
+
+
+def cmd_sources_ingest(args):
+    client = HttpClient(cache_dir=args.cache, offline=args.offline)
+    feeds = args.feeds.split(",") if args.feeds else None
+    reports, errors = vfeeds.collect(client, feeds=feeds, limit_per=args.limit)
+    print(f"ingested {len(reports)} reports from live feeds")
+    if errors:
+        print("feed errors:", json.dumps(errors, indent=2))
+    for r in reports[:5]:
+        print(f"  [{r['source']}] {r['text'][:90]}")
+    return 0
+
+
+def cmd_demo_live(args):
+    client = HttpClient(cache_dir=args.cache, offline=args.offline)
+    reports, errors = vfeeds.collect(client, limit_per=args.limit)
+    if not reports:
+        print("no reports ingested (offline with empty cache?)")
+        if errors:
+            print(json.dumps(errors, indent=2))
+        return 1
+    orch = Orchestrator(reports, {})
+    result = orch.answer(args.query, k=args.k)
+    print(reportmod.render_text(result))
+    print(f"\nIngested {len(reports)} live reports | graph: "
+          f"{len(orch.graph.entities)} entities, {len(orch.graph.edges)} edges")
+    return 0
+
+
 def build_parser():
     p = argparse.ArgumentParser(prog="cognis-vanguard",
                                 description="Cognis Vanguard — self-hosted multi-INT fusion & orchestration")
@@ -110,6 +152,28 @@ def build_parser():
     g.add_argument("--gazetteer")
     g.add_argument("--stix", action="store_true")
     g.set_defaults(func=cmd_graph)
+
+    sl = sub.add_parser("sources-list", help="list live feeds")
+    sl.add_argument("--category")
+    sl.set_defaults(func=cmd_sources_list)
+
+    ss = sub.add_parser("sources-stats", help="feed coverage statistics")
+    ss.set_defaults(func=cmd_sources_stats)
+
+    ing = sub.add_parser("sources-ingest", help="fetch live feeds -> reports")
+    ing.add_argument("--feeds", help="comma-separated feed names")
+    ing.add_argument("--offline", action="store_true")
+    ing.add_argument("--cache", default=".cache")
+    ing.add_argument("--limit", type=int, default=50)
+    ing.set_defaults(func=cmd_sources_ingest)
+
+    dl = sub.add_parser("demo-live", help="ingest live feeds and answer a query")
+    dl.add_argument("--query", default="maritime narcotics trafficking vessel")
+    dl.add_argument("--k", type=int, default=3)
+    dl.add_argument("--offline", action="store_true")
+    dl.add_argument("--cache", default=".cache")
+    dl.add_argument("--limit", type=int, default=50)
+    dl.set_defaults(func=cmd_demo_live)
     return p
 
 

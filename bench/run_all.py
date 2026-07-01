@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from bench import benchmark, evaluate  # noqa: E402
+from cognis_vanguard.sources import ingest as vfeeds  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -19,6 +20,7 @@ def build_results():
     return {
         "accuracy": evaluate.evaluate(),
         "performance": benchmark.benchmark(),
+        "feeds": vfeeds.stats(),
         "environment": {
             "python": platform.python_version(),
             "implementation": platform.python_implementation(),
@@ -56,8 +58,15 @@ def render_md(res) -> str:
         L.append(f"| {row['reports']:,} | {row['mentions']:,} | {row['extract_s']} | {row['resolve_s']} | "
                  f"{row['graph_s']} | {row['index_s']} | {row['query_ms']} | {row['reports_per_s']:,} |")
     L.append("")
+    f = res.get("feeds")
+    if f:
+        L.append("## Live feed coverage\n")
+        L.append(f"- **{f['total']} keyless live feeds** across: "
+                 + ", ".join(f"{k}={v}" for k, v in f["by_category"].items()))
+        L.append(f"- Adapters: {', '.join(f['adapters'])}")
+        L.append("")
     L.append("All numbers are produced by `bench/run_all.py` and gated in CI by "
-             "`tests/test_bench.py`. See `docs/LIMITATIONS.md` for scope caveats.\n")
+             "`tests/test_bench.py` / `tests/test_sources.py`. See `docs/LIMITATIONS.md`.\n")
     return "\n".join(L)
 
 

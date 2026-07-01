@@ -19,8 +19,13 @@ Environment: CPython 3.14.0 on Windows/AMD64. Deterministic inputs and default o
 
 | Reports | Mentions | Extract (s) | Resolve (s) | Graph (s) | Index (s) | Query (ms) | Reports/s |
 |---:|---:|---:|---:|---:|---:|---:|---:|
-| 500 | 3,000 | 0.0187 | 0.0066 | 0.0259 | 0.0072 | 1.882 | 8,557 |
-| 2,000 | 12,000 | 0.059 | 0.0517 | 0.1591 | 0.0361 | 8.335 | 6,538 |
-| 8,000 | 48,000 | 0.2757 | 0.0905 | 0.4752 | 0.1187 | 29.504 | 8,332 |
+| 500 | 3,000 | 0.0218 | 0.005 | 0.0289 | 0.0075 | 1.965 | 7,916 |
+| 2,000 | 12,000 | 0.063 | 0.018 | 0.1279 | 0.0275 | 7.483 | 8,459 |
+| 8,000 | 48,000 | 0.2399 | 0.0872 | 0.4856 | 0.1243 | 29.043 | 8,537 |
 
-All numbers are produced by `bench/run_all.py` and gated in CI by `tests/test_bench.py`. See `docs/LIMITATIONS.md` for scope caveats.
+## Live feed coverage
+
+- **14 keyless live feeds** across: advisories=2, osint-news=5, situational=4, threat-intel=3
+- Adapters: gdelt, ioc_lines, reliefweb, rss, usgs
+
+All numbers are produced by `bench/run_all.py` and gated in CI by `tests/test_bench.py` / `tests/test_sources.py`. See `docs/LIMITATIONS.md`.

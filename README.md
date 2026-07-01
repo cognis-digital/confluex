@@ -24,6 +24,20 @@
 - 📤 **STIX 2.1 export** — deterministic bundles with source references.
 - 🔒 **Offline / air-gap** — pure Python stdlib, **zero dependencies**.
 
+## Live feeds (14 keyless OSINT / situational / threat sources)
+
+Vanguard ingests keyless live feeds — **GDELT**, **ReliefWeb**, **USGS**, **GDACS**,
+**CISA advisories**, defense-news RSS, **DVIDS**, and **abuse.ch** IOC feeds —
+and materializes each into a report that flows into extraction, the knowledge
+graph, and retrieval. Fetches cache to disk for **offline / air-gap** replay.
+See [`docs/FEEDS.md`](docs/FEEDS.md).
+
+```bash
+cognis-vanguard sources-stats                              # feed coverage
+cognis-vanguard sources-ingest --feeds usgs_significant,feodo_iocs
+cognis-vanguard demo-live --query "maritime narcotics trafficking vessel"
+```
+
 ## Quick start
 
 ```bash

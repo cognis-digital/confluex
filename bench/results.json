@@ -24,34 +24,51 @@
     {
       "reports": 500,
       "mentions": 3000,
-      "extract_s": 0.0187,
-      "resolve_s": 0.0066,
-      "graph_s": 0.0259,
-      "index_s": 0.0072,
-      "query_ms": 1.882,
-      "reports_per_s": 8557
+      "extract_s": 0.0218,
+      "resolve_s": 0.005,
+      "graph_s": 0.0289,
+      "index_s": 0.0075,
+      "query_ms": 1.965,
+      "reports_per_s": 7916
     },
     {
       "reports": 2000,
       "mentions": 12000,
-      "extract_s": 0.059,
-      "resolve_s": 0.0517,
-      "graph_s": 0.1591,
-      "index_s": 0.0361,
-      "query_ms": 8.335,
-      "reports_per_s": 6538
+      "extract_s": 0.063,
+      "resolve_s": 0.018,
+      "graph_s": 0.1279,
+      "index_s": 0.0275,
+      "query_ms": 7.483,
+      "reports_per_s": 8459
     },
     {
       "reports": 8000,
       "mentions": 48000,
-      "extract_s": 0.2757,
-      "resolve_s": 0.0905,
-      "graph_s": 0.4752,
-      "index_s": 0.1187,
-      "query_ms": 29.504,
-      "reports_per_s": 8332
+      "extract_s": 0.2399,
+      "resolve_s": 0.0872,
+      "graph_s": 0.4856,
+      "index_s": 0.1243,
+      "query_ms": 29.043,
+      "reports_per_s": 8537
     }
   ],
+  "feeds": {
+    "total": 14,
+    "keyless": 14,
+    "by_category": {
+      "advisories": 2,
+      "osint-news": 5,
+      "situational": 4,
+      "threat-intel": 3
+    },
+    "adapters": [
+      "gdelt",
+      "ioc_lines",
+      "reliefweb",
+      "rss",
+      "usgs"
+    ]
+  },
   "environment": {
     "python": "3.14.0",
     "implementation": "CPython",

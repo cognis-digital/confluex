@@ -2,6 +2,21 @@
 
 Adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] — 2026-07-01
+
+### Added
+- **Live feed integration** (`cognis_vanguard.sources`): 14 keyless OSINT /
+  situational-awareness / threat feeds (GDELT, ReliefWeb, USGS, GDACS, CISA
+  advisories, defense news RSS, DVIDS, abuse.ch IOC feeds) materialized into
+  Vanguard reports that flow into extraction, the knowledge graph, and retrieval.
+- Adapters: GDELT, ReliefWeb, USGS GeoJSON, generic RSS/Atom, IOC-lines
+  (pattern-based IP/URL extraction). HTTP client with offline/air-gap cache.
+- CLI: `sources-list`, `sources-stats`, `sources-ingest`, `demo-live`
+  (ingest live feeds and answer a query end-to-end).
+- Feed coverage added to `bench/run_all.py` / `RESULTS.md`;
+  `tests/test_sources.py` gates catalog, adapters, ingest, and graph integration.
+- Live-verified: real USGS events and abuse.ch indicators ingested as reports.
+
 ## [0.1.0] — 2026-07-01
 
 Initial public release.
