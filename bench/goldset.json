@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "R-001": [["ipv4", "203.0.113.10"], ["crypto-address", "addr-B1"], ["org", "Red Harbor Syndicate"], ["person", "Marek Voss"]],
+    "R-002": [["ipv4", "203.0.113.10"], ["email", "logistics@grey-ferry.example"], ["org", "Grey Ferry Logistics"]],
+    "R-003": [["vessel", "MV Nightjar"], ["geo", "9.281,-79.921"], ["org", "Grey Ferry Logistics"]],
+    "R-004": [["person", "Marek Voss"], ["crypto-address", "addr-B1"], ["sha256", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"]],
+    "R-005": [["vessel", "MV Petrel"]]
+  },
+  "resolution": [
+    {"type": "crypto-address", "canonical": "addr-B1", "expected_sources": ["R-001", "R-004"]},
+    {"type": "org", "canonical": "Grey Ferry Logistics", "expected_sources": ["R-002", "R-003"]},
+    {"type": "person", "canonical": "Marek Voss", "expected_sources": ["R-001", "R-004"]}
+  ],
+  "queries": [
+    {"q": "who controls wallet addr-B1", "relevant": ["R-001", "R-004"]},
+    {"q": "infrastructure server 203.0.113.10", "relevant": ["R-001", "R-002"]},
+    {"q": "vessel rendezvous grey ferry logistics", "relevant": ["R-002", "R-003"]}
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "R-001",
+    "timestamp": "2026-01-05T09:00:00Z",
+    "source": "OSINT",
+    "text": "The Red Harbor Syndicate moved funds through wallet addr-B1 following a transfer observed from server 203.0.113.10. Analysts link RHS to Marek Voss."
+  },
+  {
+    "id": "R-002",
+    "timestamp": "2026-01-06T14:20:00Z",
+    "source": "SIGINT-META",
+    "text": "Traffic from 203.0.113.10 correlated with panel.example-c2.net. Contact email logistics@grey-ferry.example was recovered. Grey Ferry Logistics coordinated shipping for the network."
+  },
+  {
+    "id": "R-003",
+    "timestamp": "2026-01-07T02:10:00Z",
+    "source": "MARINT",
+    "text": "MV Nightjar loitered near 9.281,-79.921 before a rendezvous. The Nightjar is associated with Grey Ferry Logistics."
+  },
+  {
+    "id": "R-004",
+    "timestamp": "2026-01-08T18:45:00Z",
+    "source": "OSINT",
+    "text": "Marek Voss used wallet addr-B1 and referenced hash e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 in a paste."
+  },
+  {
+    "id": "R-005",
+    "timestamp": "2026-01-09T11:30:00Z",
+    "source": "OSINT",
+    "text": "Unrelated maritime advisory: MV Petrel reported engine trouble near port. No known links to trafficking."
+  }
+]

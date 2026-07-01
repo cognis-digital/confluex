@@ -1,0 +1,13 @@
+{
+  "org": {
+    "Red Harbor Syndicate": ["RHS", "Red Harbor"],
+    "Grey Ferry Logistics": ["Grey Ferry", "GFL"]
+  },
+  "vessel": {
+    "MV Nightjar": ["Nightjar"],
+    "MV Petrel": ["Petrel"]
+  },
+  "person": {
+    "Marek Voss": ["Voss", "M. Voss"]
+  }
+}

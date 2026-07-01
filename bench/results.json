@@ -1,0 +1,61 @@
+{
+  "accuracy": {
+    "dataset": {
+      "reports": 5,
+      "gold_entities": 14
+    },
+    "extraction": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 14,
+      "fp": 0,
+      "fn": 0
+    },
+    "resolution_accuracy": 1.0,
+    "retrieval": {
+      "precision_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "mrr": 1.0
+    },
+    "determinism": true
+  },
+  "performance": [
+    {
+      "reports": 500,
+      "mentions": 3000,
+      "extract_s": 0.0187,
+      "resolve_s": 0.0066,
+      "graph_s": 0.0259,
+      "index_s": 0.0072,
+      "query_ms": 1.882,
+      "reports_per_s": 8557
+    },
+    {
+      "reports": 2000,
+      "mentions": 12000,
+      "extract_s": 0.059,
+      "resolve_s": 0.0517,
+      "graph_s": 0.1591,
+      "index_s": 0.0361,
+      "query_ms": 8.335,
+      "reports_per_s": 6538
+    },
+    {
+      "reports": 8000,
+      "mentions": 48000,
+      "extract_s": 0.2757,
+      "resolve_s": 0.0905,
+      "graph_s": 0.4752,
+      "index_s": 0.1187,
+      "query_ms": 29.504,
+      "reports_per_s": 8332
+    }
+  ],
+  "environment": {
+    "python": "3.14.0",
+    "implementation": "CPython",
+    "system": "Windows",
+    "machine": "AMD64"
+  }
+}

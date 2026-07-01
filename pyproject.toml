@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cognis-vanguard"
+version = "0.1.0"
+description = "Self-hosted, edge-capable multi-INT fusion & agent orchestration (Cognis Vanguard)"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Cognis Digital LLC" }]
+keywords = ["osint", "multi-int", "fusion", "knowledge-graph", "agents",
+            "stix", "self-hosted", "edge", "cognis"]
+license = { text = "COCL-1.0" }
+dependencies = []
+
+[project.urls]
+Homepage = "https://cognis.digital"
+
+[project.scripts]
+cognis-vanguard = "cognis_vanguard.cli:main"
+
+[tool.setuptools]
+packages = ["cognis_vanguard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
