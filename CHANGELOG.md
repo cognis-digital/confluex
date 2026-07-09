@@ -62,7 +62,7 @@ Adheres to [Semantic Versioning](https://semver.org/).
 - **Live feed integration** (`meldkit.sources`): 14 keyless OSINT /
   situational-awareness / threat feeds (GDELT, ReliefWeb, USGS, GDACS, CISA
   advisories, defense news RSS, DVIDS, abuse.ch IOC feeds) materialized into
-  Vanguard reports that flow into extraction, the knowledge graph, and retrieval.
+  Meldkit reports that flow into extraction, the knowledge graph, and retrieval.
 - Adapters: GDELT, ReliefWeb, USGS GeoJSON, generic RSS/Atom, IOC-lines
   (pattern-based IP/URL extraction). HTTP client with offline/air-gap cache.
 - CLI: `sources-list`, `sources-stats`, `sources-ingest`, `demo-live`

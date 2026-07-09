@@ -6,7 +6,7 @@ text description — so captured-media analysis is testable with no model. An op
 OllamaVisionProvider calls a locally-served multimodal model (e.g. llava) and is
 used only when reachable; the platform never depends on it.
 
-`analyze_media` turns a frame into a Vanguard report that flows into the graph.
+`analyze_media` turns a frame into a Meldkit report that flows into the graph.
 """
 
 from __future__ import annotations
@@ -67,7 +67,7 @@ class OllamaVisionProvider(VisionProvider):
 
 def analyze_media(image, provider: VisionProvider = None, source="captured-media",
                   ts="", **kw) -> dict:
-    """Analyze a captured-media frame -> a Vanguard report dict."""
+    """Analyze a captured-media frame -> a Meldkit report dict."""
     provider = provider or DeterministicVisionProvider()
     result = provider.analyze(image, **kw)
     rid = "media-" + hashlib.sha1(str(result["text"]).encode("utf-8")).hexdigest()[:10]

@@ -1,6 +1,6 @@
 # SOLIC Challenge Area 9 (Open Topic) — Capability Mapping
 
-Vanguard addresses a concrete SOF enterprise gap: **trustworthy AI analytics at
+Meldkit addresses a concrete SOF enterprise gap: **trustworthy AI analytics at
 the disconnected tactical edge.**
 
 | SOF need | Meldkit | Module |
@@ -19,7 +19,7 @@ the disconnected tactical edge.**
 
 ## Scope guardrail (explicit)
 
-Vanguard is a **defensive multi-INT fusion and situational-awareness** analytic.
+Meldkit is a **defensive multi-INT fusion and situational-awareness** analytic.
 It supports *understanding* and *force protection*. It contains **no** targeting,
 target-nomination, prioritization-for-engagement, fire-control, kill-chain, or
 strike-support capability, and its symbol-agnostic export deliberately omits
@@ -34,5 +34,5 @@ configuration option.
   target-hardware edge packaging, and classified-enclave audit logging are the
   post-award prototype scope, demonstrable at the July 24 event.
 
-As an Open Topic entry, Vanguard is intentionally adaptable to the single
+As an Open Topic entry, Meldkit is intentionally adaptable to the single
 highest-value SOF use case the sponsor identifies.

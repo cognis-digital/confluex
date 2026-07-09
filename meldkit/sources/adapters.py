@@ -1,4 +1,4 @@
-"""Adapters: raw feed bytes -> Vanguard reports [{id, timestamp, source, text}].
+"""Adapters: raw feed bytes -> Meldkit reports [{id, timestamp, source, text}].
 
 Pure functions of their input, tested against local fixtures with no network.
 """

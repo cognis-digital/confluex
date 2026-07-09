@@ -81,7 +81,7 @@ def render_text(result: dict) -> str:
     c = result["counts"]
     L = []
     L.append("=" * 72)
-    L.append("  COGNIS VANGUARD  |  Common Operating Picture (situational awareness)")
+    L.append("  MELDKIT  |  Common Operating Picture (situational awareness)")
     L.append("  Defensive fusion - understanding & force protection, not targeting")
     L.append("=" * 72)
     L.append(f"Scenario : {result['name']}")

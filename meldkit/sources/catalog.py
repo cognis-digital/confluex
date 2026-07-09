@@ -1,4 +1,4 @@
-"""Catalog of keyless live feeds that materialize into Vanguard reports.
+"""Catalog of keyless live feeds that materialize into Meldkit reports.
 
 category: osint-news | situational | threat-intel | advisories
 adapter:  gdelt | reliefweb | usgs | rss | ioc_lines

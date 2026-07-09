@@ -1,4 +1,4 @@
-"""Fetch feeds and materialize Vanguard reports; coverage stats."""
+"""Fetch feeds and materialize Meldkit reports; coverage stats."""
 
 from __future__ import annotations
 
