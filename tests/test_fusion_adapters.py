@@ -1,5 +1,5 @@
-from confluex.fusion import adapters_int
-from confluex.fusion.adapters_int import (
+from meldkit.fusion import adapters_int
+from meldkit.fusion.adapters_int import (
     geoint, humint, masint, normalize, osint, sigint_meta, structured,
 )
 

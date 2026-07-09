@@ -1,6 +1,6 @@
 import json
 
-from confluex import cli
+from meldkit import cli
 
 
 def test_demo_fusion_runs(capsys):

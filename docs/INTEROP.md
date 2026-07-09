@@ -1,6 +1,6 @@
 # Interoperability Export Profiles
 
-`confluex.fusion.interop` emits fused observations and resolved entities
+`meldkit.fusion.interop` emits fused observations and resolved entities
 in four formats. All exporters are deterministic and stdlib-only.
 
 ## JSON (`to_json`)
@@ -46,7 +46,7 @@ documented *profile*, not a certified-conformant producer — hence "STIX-like".
 
 ## Symbol-agnostic entity schema (`to_symbol_agnostic`)
 
-`schema: confluex/symbol-agnostic-entity/1.0`
+`schema: meldkit/symbol-agnostic-entity/1.0`
 
 A deliberately **NATO-symbol-agnostic** entity record: it carries an
 `entity_type` and a neutral `affiliation` hint

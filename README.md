@@ -1,6 +1,7 @@
-<h1 align="center">🟣 Confluex</h1>
-<p align="center"><b>Self-hosted, edge-capable multi-INT fusion &amp; agent orchestration</b><br>
-<i>Turn heterogeneous reporting into a source-cited, provenance-tracked picture — offline, at the tactical edge.</i></p>
+<h1 align="center">🟣 Meldkit</h1>
+<p align="center"><b>Self-hosted, edge-capable multi-INT fusion → a provenance-tracked knowledge graph</b><br>
+<i>Turn heterogeneous reporting into a source-cited common operating picture — offline, at the tactical edge.</i></p>
+<p align="center"><sub>Need to orchestrate agents/tools around this? Pair it with <a href="https://github.com/cognis-digital/taskloom">taskloom</a>.</sub></p>
 
 <p align="center">
 <img alt="license" src="https://img.shields.io/badge/license-COCL--1.0-6D28D9">
@@ -17,7 +18,7 @@
 ## Install
 
 **Prerequisite:** Python **3.9+** (no other runtime deps — pure stdlib). The
-one-command installers create a local `.venv` and install the `confluex` CLI.
+one-command installers create a local `.venv` and install the `meldkit` CLI.
 Clone first: `git clone https://github.com/cognis-digital/cognis-vanguard && cd cognis-vanguard`
 
 <details open><summary><b>Windows (PowerShell)</b></summary>
@@ -25,8 +26,8 @@ Clone first: `git clone https://github.com/cognis-digital/cognis-vanguard && cd 
 ```powershell
 .\install.ps1
 .\.venv\Scripts\Activate.ps1      # activate this shell
-confluex --help
-confluex demo                      # end-to-end demo on bundled reporting
+meldkit --help
+meldkit demo                      # end-to-end demo on bundled reporting
 ```
 </details>
 
@@ -35,8 +36,8 @@ confluex demo                      # end-to-end demo on bundled reporting
 ```bash
 ./install.sh
 source .venv/bin/activate         # activate this shell
-confluex --help
-confluex demo
+meldkit --help
+meldkit demo
 ```
 </details>
 
@@ -45,8 +46,8 @@ confluex demo
 ```bash
 ./install.sh
 source .venv/bin/activate         # activate this shell
-confluex --help
-confluex demo
+meldkit --help
+meldkit demo
 ```
 </details>
 
@@ -55,7 +56,7 @@ confluex demo
 ```bash
 docker build -t cognis-vanguard .
 docker run --rm cognis-vanguard --help
-docker run --rm cognis-vanguard demo        # any confluex subcommand works
+docker run --rm cognis-vanguard demo        # any meldkit subcommand works
 ```
 </details>
 
@@ -76,7 +77,7 @@ POSIX systems.
 
 ## 🧩 Multi-INT fusion & Common Operating Picture (v0.4)
 
-The `confluex.fusion` layer normalizes **six INT disciplines** into one
+The `meldkit.fusion` layer normalizes **six INT disciplines** into one
 common `Observation` schema and fuses them into a source-cited, corroboration-
 graded **Common Operating Picture** — for **situational awareness and force
 protection only**.
@@ -97,10 +98,10 @@ protection only**.
   entity schema** (no MIL-STD-2525/APP-6 codes — descriptive, not a targeting overlay).
 
 ```bash
-confluex fuse --scenario data/scenario_maritime.json --html cop.html  # COP + dashboard
-confluex dossier --entity Nightjar                                    # entity dossier
-confluex export --format stix > out.stix.json                         # interop
-confluex demo-fusion                                                  # one-shot demo
+meldkit fuse --scenario data/scenario_maritime.json --html cop.html  # COP + dashboard
+meldkit dossier --entity Nightjar                                    # entity dossier
+meldkit export --format stix > out.stix.json                         # interop
+meldkit demo-fusion                                                  # one-shot demo
 ```
 
 > **Not targeting.** This fuses intelligence for *understanding* and *force
@@ -117,28 +118,28 @@ graph, and retrieval. Fetches cache to disk for **offline / air-gap** replay.
 See [`docs/FEEDS.md`](docs/FEEDS.md).
 
 ```bash
-confluex sources-stats                              # feed coverage
-confluex sources-ingest --feeds usgs_significant,feodo_iocs
-confluex demo-live --query "maritime narcotics trafficking vessel"
+meldkit sources-stats                              # feed coverage
+meldkit sources-ingest --feeds usgs_significant,feodo_iocs
+meldkit demo-live --query "maritime narcotics trafficking vessel"
 ```
 
 ## Quick start
 
 ```bash
-git clone https://github.com/cognis-digital/confluex
-cd confluex
-python -m confluex demo --query "who controls wallet addr-B1" --stix out.stix.json
+git clone https://github.com/cognis-digital/meldkit
+cd meldkit
+python -m meldkit demo --query "who controls wallet addr-B1" --stix out.stix.json
 ```
 
 ```bash
-confluex query --reports data/sample_reports.json --gazetteer data/gazetteer.json \
+meldkit query --reports data/sample_reports.json --gazetteer data/gazetteer.json \
                       --q "vessel rendezvous grey ferry logistics"
-confluex correlate --reports data/sample_reports.json --gazetteer data/gazetteer.json --value addr-B1
-confluex graph --reports data/sample_reports.json --gazetteer data/gazetteer.json --stix
+meldkit correlate --reports data/sample_reports.json --gazetteer data/gazetteer.json --value addr-B1
+meldkit graph --reports data/sample_reports.json --gazetteer data/gazetteer.json --stix
 ```
 
 ```python
-from confluex.agents import Orchestrator
+from meldkit.agents import Orchestrator
 orch = Orchestrator(reports, gazetteer)          # optional: provider=OllamaProvider("llama3")
 result = orch.answer("who controls wallet addr-B1")   # source-cited, with execution trace
 ```

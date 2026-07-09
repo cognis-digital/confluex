@@ -7,7 +7,7 @@ import hashlib
 import os
 import urllib.request
 
-USER_AGENT = "confluex/0.2 (+https://cognis.digital)"
+USER_AGENT = "meldkit/0.2 (+https://cognis.digital)"
 
 
 class HttpClient:

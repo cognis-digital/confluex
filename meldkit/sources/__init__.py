@@ -1,4 +1,4 @@
-"""Live feed integration for Confluex.
+"""Live feed integration for Meldkit.
 
 Pulls keyless OSINT / situational-awareness / threat feeds and materializes them
 as Vanguard *reports* (id, timestamp, source, text) that flow straight into

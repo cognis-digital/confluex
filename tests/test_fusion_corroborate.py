@@ -1,5 +1,5 @@
-from confluex.fusion import corroborate, entities
-from confluex.fusion.schema import Observation
+from meldkit.fusion import corroborate, entities
+from meldkit.fusion.schema import Observation
 
 
 def _o(entity, disc, src, ts="2026-01-01T00:00:00Z", lat=None, lon=None,

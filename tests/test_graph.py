@@ -1,6 +1,6 @@
 import os
 
-from confluex import extract, graph, stix
+from meldkit import extract, graph, stix
 
 D = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data"))
 

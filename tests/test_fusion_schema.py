@@ -1,4 +1,4 @@
-from confluex.fusion.schema import (
+from meldkit.fusion.schema import (
     INT_DISCIPLINES, Observation, haversine_km, observations_to_reports, validate,
 )
 

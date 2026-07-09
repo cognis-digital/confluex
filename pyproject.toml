@@ -3,9 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "confluex"
+name = "meldkit"
 version = "0.4.0"
-description = "Self-hosted, edge-capable multi-INT fusion & agent orchestration (Confluex)"
+description = "Self-hosted, edge-capable multi-INT fusion & agent orchestration (Meldkit)"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "Cognis Digital LLC" }]
@@ -18,10 +18,10 @@ dependencies = []
 Homepage = "https://cognis.digital"
 
 [project.scripts]
-confluex = "confluex.cli:main"
+meldkit = "meldkit.cli:main"
 
 [tool.setuptools]
-packages = ["confluex", "confluex.sources", "confluex.fusion"]
+packages = ["meldkit", "meldkit.sources", "meldkit.fusion"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

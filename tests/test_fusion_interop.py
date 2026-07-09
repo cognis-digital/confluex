@@ -2,8 +2,8 @@ import csv
 import io
 import json
 
-from confluex.fusion import entities, interop
-from confluex.fusion.schema import Observation
+from meldkit.fusion import entities, interop
+from meldkit.fusion.schema import Observation
 
 
 def _sample():

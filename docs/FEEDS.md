@@ -1,6 +1,6 @@
 # Live Feeds
 
-Confluex integrates **14 keyless live feeds** that materialize into
+Meldkit integrates **14 keyless live feeds** that materialize into
 reports (`{id, timestamp, source, text}`) and flow through the full pipeline
 (extraction → resolution → knowledge graph → retrieval → orchestration). Every
 fetch caches to disk, so ingestion also runs **offline / air-gapped**.
@@ -26,16 +26,16 @@ fetch caches to disk, so ingestion also runs **offline / air-gapped**.
 ## Usage
 
 ```bash
-confluex sources-list                       # browse feeds
-confluex sources-stats                       # coverage json
-confluex sources-ingest --cache .cache       # fetch -> reports
-confluex sources-ingest --offline --cache .cache   # air-gapped replay
-confluex demo-live --query "go-fast vessel near port"   # ingest + answer
+meldkit sources-list                       # browse feeds
+meldkit sources-stats                       # coverage json
+meldkit sources-ingest --cache .cache       # fetch -> reports
+meldkit sources-ingest --offline --cache .cache   # air-gapped replay
+meldkit demo-live --query "go-fast vessel near port"   # ingest + answer
 ```
 
 ```python
-from confluex.sources import HttpClient, collect
-from confluex.agents import Orchestrator
+from meldkit.sources import HttpClient, collect
+from meldkit.agents import Orchestrator
 reports, errors = collect(HttpClient(cache_dir=".cache"))
 orch = Orchestrator(reports, {})
 print(orch.answer("maritime narcotics trafficking")["answer"])

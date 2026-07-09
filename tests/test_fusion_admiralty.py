@@ -1,5 +1,5 @@
-from confluex.fusion import admiralty
-from confluex.fusion.schema import Observation
+from meldkit.fusion import admiralty
+from meldkit.fusion.schema import Observation
 
 
 def _obs(rel="", cred=""):

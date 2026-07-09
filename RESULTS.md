@@ -1,4 +1,4 @@
-# Confluex — Verification Results
+# Meldkit — Verification Results
 
 Reproduce with: `python bench/run_all.py` (regenerates this file).
 

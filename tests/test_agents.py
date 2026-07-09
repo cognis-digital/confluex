@@ -1,7 +1,7 @@
 import os
 
-from confluex import extract
-from confluex.agents import Orchestrator
+from meldkit import extract
+from meldkit.agents import Orchestrator
 
 D = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data"))
 

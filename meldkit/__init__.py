@@ -1,4 +1,4 @@
-"""Confluex — self-hosted, edge-capable multi-INT fusion & agent
+"""Meldkit — self-hosted, edge-capable multi-INT fusion & agent
 orchestration for austere/disconnected environments.
 
 Ingests heterogeneous reporting, extracts and resolves entities, builds a

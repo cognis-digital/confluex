@@ -6,10 +6,10 @@ from __future__ import annotations
 import json
 import time
 
-from confluex import extract as extractmod
-from confluex import graph as graphmod
-from confluex.index import TfidfIndex
-from confluex.resolve import resolve
+from meldkit import extract as extractmod
+from meldkit import graph as graphmod
+from meldkit.index import TfidfIndex
+from meldkit.resolve import resolve
 
 GAZ = {"vessel": {"MV Nightjar": ["Nightjar"]}}
 

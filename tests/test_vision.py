@@ -1,5 +1,5 @@
-from confluex import smalltarget
-from confluex.vision import (
+from meldkit import smalltarget
+from meldkit.vision import (
     DeterministicVisionProvider, OllamaVisionProvider, analyze_media,
 )
 

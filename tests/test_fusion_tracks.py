@@ -1,5 +1,5 @@
-from confluex.fusion import entities, tracks
-from confluex.fusion.schema import Observation
+from meldkit.fusion import entities, tracks
+from meldkit.fusion.schema import Observation
 
 
 def _o(entity, ts, lat, lon, disc="GEOINT", src="s"):

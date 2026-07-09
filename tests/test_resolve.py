@@ -1,7 +1,7 @@
 import os
 
-from confluex import extract
-from confluex.resolve import resolve
+from meldkit import extract
+from meldkit.resolve import resolve
 
 D = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data"))
 

@@ -1,7 +1,7 @@
 import os
 
-from confluex import extract
-from confluex.index import TfidfIndex, tokenize
+from meldkit import extract
+from meldkit.index import TfidfIndex, tokenize
 
 D = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "data"))
 

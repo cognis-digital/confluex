@@ -5,11 +5,11 @@ from __future__ import annotations
 import json
 import os
 
-from confluex import extract as extractmod
-from confluex import graph as graphmod
-from confluex import stix
-from confluex.index import TfidfIndex
-from confluex.resolve import resolve
+from meldkit import extract as extractmod
+from meldkit import graph as graphmod
+from meldkit import stix
+from meldkit.index import TfidfIndex
+from meldkit.resolve import resolve
 
 from .metrics import mrr, precision_at_k, prf, recall_at_k
 

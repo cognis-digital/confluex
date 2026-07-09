@@ -1,6 +1,6 @@
 # Limitations & Responsible Use
 
-Confluex is an **analytic aid**, not an autonomous decision-maker.
+Meldkit is an **analytic aid**, not an autonomous decision-maker.
 
 ## Scope
 - Extraction is regex + gazetteer based: excellent on structured indicators and

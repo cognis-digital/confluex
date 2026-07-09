@@ -1,4 +1,4 @@
-from confluex.llm import DeterministicProvider, OllamaProvider
+from meldkit.llm import DeterministicProvider, OllamaProvider
 
 
 def test_deterministic_provider_extracts_relevant_sentence():
